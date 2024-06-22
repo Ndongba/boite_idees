@@ -12,8 +12,8 @@
   <h5 class="card-header">{{ $idee->auteur_nom_complet}}</h5>
   <div class="card-body">
     <h5 class="card-title">{{ $idee->libelle}}</h5>
-    <p class="card-text">{{ Str::limit ( $idee->description,30)}}</p>
-    <a href="#" class="btn btn-primary">Voir detail</a>
+    <p class="card-text">{{ Str::limit ( $idee->description,100)}}</p>
+    <a href="detail_idee/{{ $idee->id}}" class="btn btn-primary">Voir detail</a>
     <a href="supprimer/{{ $idee->id}}" class="btn btn-danger">Supprimer</a>
     <hr>
   </div>

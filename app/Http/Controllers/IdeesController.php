@@ -40,7 +40,9 @@ class IdeesController extends Controller
      */
     public function show(string $id)
   {
-        //
+        $idee=Idees::find($id);
+
+        return view('idees.detail_idee', compact('idee'));
   }
 
     /**
