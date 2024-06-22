@@ -64,6 +64,9 @@ class IdeesController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $idee=Idees::find($id);
+        $idee->delete();
+
+        return redirect()->back();
     }
 }
