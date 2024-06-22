@@ -12,7 +12,9 @@ class IdeesController extends Controller
      */
     public function index()
     {
-        //
+        $idees=Idees::all();
+
+        return view('idees.affiche_idee', compact('idees'));
     }
 
     /**
@@ -37,9 +39,9 @@ class IdeesController extends Controller
      * Display the specified resource.
      */
     public function show(string $id)
-    {
+  {
         //
-    }
+  }
 
     /**
      * Show the form for editing the specified resource.

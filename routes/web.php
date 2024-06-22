@@ -12,4 +12,5 @@ Route::controller(IdeesController::class)->group(function(){
 
     Route::get('ajouter_idee','create');
     Route::post('ajouter_idee','store');
+    Route::get('affiche_idee','index');
 });
