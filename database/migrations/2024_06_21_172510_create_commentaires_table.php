@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('libelle');
             $table->string('nom_complet_auteur');
+            $table->unsignedBigInteger('idee_id');
+            $table->foreign('idee_id')->references('id')->on('idees')->onDelete('cascade');
             $table->timestamps();
         });
     }

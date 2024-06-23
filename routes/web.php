@@ -16,4 +16,5 @@ Route::controller(IdeesController::class)->group(function(){
     Route::get('affiche_idee','index');
     Route::get('supprimer/{id}','destroy');
     Route::get('detail_idee/{id}','show');
+    Route::post('detail_idee/save_commentaire','save_commentaire');
 });

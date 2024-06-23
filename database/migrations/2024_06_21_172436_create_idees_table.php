@@ -18,8 +18,8 @@ return new class extends Migration
             $table->string('auteur_nom_complet');
             $table->string('auteur_email');
             $table->enum('statusidees',['approuvée','refusée']);
-            $table->unsignedBigInteger('commentaire_id');
-            $table->foreign('commentaire_id')->references('id')->on('commentaires')->onDelete('cascade');
+            $table->unsignedBigInteger('categorie_id');
+            $table->foreign('categorie_id')->references('id')->on('categories')->onDelete('cascade');
             $table->timestamps();
         });
     }
