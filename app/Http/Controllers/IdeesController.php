@@ -62,7 +62,8 @@ class IdeesController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $idee=Idees::find($id);
+        return view('idees.modifier_idee',compact('idee'));
     }
 
     /**
@@ -70,7 +71,10 @@ class IdeesController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $idee= Idees::find($id);
+        $idee->update($request->all());
+
+        return redirect('affiche_idee');
     }
 
     /**

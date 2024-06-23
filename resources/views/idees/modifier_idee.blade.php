@@ -7,29 +7,30 @@
     <title>Ajouter une idée</title>
 </head>
 <body>
-    <form action="ajouter_idee" method="POST" class="container">
+    <form action="{{ url('modifier_idee/'.$idee->id) }}" method="POST" class="container">
         @csrf
 
-        <h1>Donnez Votre Idée</h1>
+       <h1>Donnez Votre Idée</h1>
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Nom Auteur</label>
-            <input type="text" class="form-control" name="auteur_nom_complet">
-        </div>
+            <input type="text" class="form-control" name="auteur_nom_complet" value="{{ $idee->auteur_nom_complet}}">
+        </div> 
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Email</label>
-            <input type="email" class="form-control" name="auteur_email">
+            <input type="email" class="form-control" name="auteur_email" value="{{ $idee->auteur_email}}">
         </div>
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Libelle</label>
-            <input type="text" class="form-control" name="libelle">
+            <input type="text" class="form-control" name="libelle" value="{{ $idee->libelle}}">
         </div>
         <div class="mb-3">
             <label for="exampleFormControlTextarea1" class="form-label">Description</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="10" name="description"></textarea>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="10" name="description">{{ $idee->description}}</textarea>
         </div>
 
         <button type="submit" class="btn btn-primary">Soumettre</button>
     </form>
+    
     
 </body>
 </html>
