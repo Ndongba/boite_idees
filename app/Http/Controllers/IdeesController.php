@@ -44,10 +44,10 @@ class IdeesController extends Controller
      */
     public function show(string $id)
   {     
-        $idee=Idees::find($id);
-        $commentaires= $idee->commentaires;
+        $idee=Idees::with('commentaires')->find($id);
+       
 
-        return view('idees.detail_idee', compact('idee','commentaires'));
+        return view('idees.detail_idee', compact('idee'));
   }
 
     public function save_commentaire(Request $request){

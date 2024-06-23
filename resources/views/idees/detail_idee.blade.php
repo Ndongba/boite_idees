@@ -25,7 +25,7 @@
           <h1 class="text-center">Ecrivez votre commentaire</h1>
       <form class="container" action="save_commentaire" method="post">
         @csrf
-        <input type="hidden" name="idee_id" value="{{ $idee->id}}">
+        <input type="hidden" name="idees_id" value="{{ $idee->id}}">
         <div class="mb-3">
           <label for="auteur" class="form-label">auteur</label>
           <input type="text" class="form-control" name="nom_complet_auteur">
@@ -43,7 +43,7 @@
       <div class="card w-75 mb-3  container">
       
         <div class="card-body">
-          <h5 class="card-title">{{ $commentaire->auteur}}</h5>
+          <h5 class="card-title">{{ $commentaire->nom_complet_auteur}}</h5>
           
           <p class="card-text">{{ $commentaire->libelle}}</p>
         
