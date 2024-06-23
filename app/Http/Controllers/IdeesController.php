@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Commentaire;
 use App\Models\Idees;
 use Illuminate\Http\Request;
 
@@ -13,9 +14,12 @@ class IdeesController extends Controller
     public function index()
     {
         $idees=Idees::all();
+        
 
         return view('idees.affiche_idee', compact('idees'));
     }
+
+    
 
     /**
      * Show the form for creating a new resource.
@@ -39,12 +43,19 @@ class IdeesController extends Controller
      * Display the specified resource.
      */
     public function show(string $id)
-  {
+  {     
         $idee=Idees::find($id);
-        
+        $commentaires= $idee->commentaires;
 
-        return view('idees.detail_idee', compact('idee'));
+        return view('idees.detail_idee', compact('idee','commentaires'));
   }
+
+    public function save_commentaire(Request $request){
+        Commentaire::create($request->all());
+        return redirect()->back();
+}
+
+    
 
     /**
      * Show the form for editing the specified resource.

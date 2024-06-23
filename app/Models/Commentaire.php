@@ -10,6 +10,12 @@ class Commentaire extends Model
 {
     use HasFactory;
 
+    protected $fillable=[
+        'nom_complet_auteur',
+        'libelle',
+        'idees_id',
+    ];
+
     public function idees(): BelongsTo{
 
         return $this->belongsTo(Idees::class);
