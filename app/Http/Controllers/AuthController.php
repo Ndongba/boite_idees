@@ -17,6 +17,13 @@ class AuthController extends Controller
    
    public function save_register(Request $request){
 
+    $request->validate([
+        'name' => 'required',
+        'email' => 'required',
+        'password' => 'required',
+
+    ]);
+
     $user=User::create($request->all());
 
     auth()->login($user);
@@ -30,6 +37,12 @@ class AuthController extends Controller
     }
 
     public function authentification(Request $request){
+
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+
+        ]);
 
         if (auth()->attempt($request->only('email','password'))){
 

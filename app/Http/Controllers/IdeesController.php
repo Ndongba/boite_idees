@@ -34,6 +34,12 @@ class IdeesController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'auteur_nom_complet' => 'required',
+            'email' => 'required',
+            'libelle' => 'required',
+            'description' => 'required',
+        ]);
         Idees::create($request->all());
 
         return redirect()->back()->with('status','Votre idée a été ajoutée avec succés');
@@ -71,6 +77,7 @@ class IdeesController extends Controller
      */
     public function update(Request $request, string $id)
     {
+       
         $idee= Idees::find($id);
         $idee->update($request->all());
 

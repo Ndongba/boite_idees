@@ -20,6 +20,7 @@ Route::controller(IdeesController::class)->group(function(){
     Route::post('detail_idee/save_commentaire','save_commentaire');
     Route::get('modifier_idee/{id}','edit');
     Route::post('modifier_idee/{id}','update');
+
 });
 
 

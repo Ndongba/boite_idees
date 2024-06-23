@@ -22,19 +22,17 @@
         <li class="nav-item">
           <a class="nav-link" href="ajouter_idee">Ajouter une idée</a>
         </li>
-       
-        
       </ul>
 
+
       @Auth
+
       <a href="#" onclick="document.getElementById('logout-form').submit()" class="btn btn-primary">
         <form action="logout" method="post" id="logout-form">@csrf</form>
 
       Se Deconnecter
       </a>
-
       @endAuth
-
     </div>
   </div>
 </nav>
@@ -46,18 +44,15 @@
   <div class="card-body">
     <h5 class="card-title">{{ $idee->libelle}}</h5>
     <p class="card-text">{{ Str::limit ( $idee->description,100)}}</p>
-
-  
-   @Auth
-
-    <a href="detail_idee/{{ $idee->id}}" class="btn btn-primary">Voir detail</a>
-    <a href="supprimer/{{ $idee->id}}" class="btn btn-danger">Supprimer</a>
-    <a href="modifier_idee/{{ $idee->id}}" class="btn btn-success">Modifier</a>
+  @Auth
+  <a href="detail_idee/{{ $idee->id}}" class="btn btn-primary">Voir detail</a>
+  <a href="supprimer/{{ $idee->id}}" class="btn btn-danger">Supprimer</a>
+  <a href="modifier_idee/{{ $idee->id}}" class="btn btn-success">Modifier</a>
     @endAuth
-
-    <hr>
-  </div>
+<hr>
 </div>
-    @endforeach
+</div>
+  @endforeach 
+   
 </body>
 </html>
