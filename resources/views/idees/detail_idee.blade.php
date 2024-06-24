@@ -17,8 +17,8 @@
             <div class="card-body">
               <h5 class="card-title">{{ $idee->libelle }}</h5>
               <p class="card-text">{{ $idee->description }}</p>
-              <a href="#" class="btn btn-primary">Approvée</a>
-              <a href="#" class="btn btn-danger">Refusée</a>
+              <a href="/approuve" class="btn btn-primary">Approuvée</a>
+              <a href="/refuse" class="btn btn-danger">Refusée</a>
             </div>
           </div>
 
