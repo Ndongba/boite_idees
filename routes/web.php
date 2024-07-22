@@ -48,8 +48,8 @@ Route::controller(AuthController::class)->group(function(){
 Route::controller(MailController::class)->group(function(){
 
     Route::get('test','index');
-    Route::get('/approuve','approuve');
-    Route::post('/approuve','approuve');
+   // Route::get('/approuve','approuve');
+    Route::post('/approuve/{id}','approuve');
     Route::get('/refuse','refuse');
     Route::post('/refuse','rufuse');
 });

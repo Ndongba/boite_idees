@@ -16,6 +16,9 @@ class Idees extends Model
         'auteur_email',
         'libelle',
         'description',
+        'status',
+        'categories_id',
+
 
     ];
 

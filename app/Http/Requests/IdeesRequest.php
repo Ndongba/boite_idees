@@ -22,7 +22,10 @@ class IdeesRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+        'auteur_nom_complet' => 'required',
+        'auteur_email' => 'required',
+        'libelle' => 'required',
+        'description' => 'required',
         ];
     }
 }

@@ -11,11 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('commentaires', function (Blueprint $table) {
-            $table->id();
-            $table->string('libelle');
-            $table->string('nom_complet_auteur');
-            $table->timestamps();
+        Schema::table('idees', function (Blueprint $table) {
+            $table->unsignedBigInteger('categories_id');
+            $table->foreign('categories_id')->references('id')->on('categories')->onDelete('cascade');
         });
     }
 
@@ -24,6 +22,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('commentaires');
+        Schema::table('idees', function (Blueprint $table) {
+            //
+        });
     }
 };

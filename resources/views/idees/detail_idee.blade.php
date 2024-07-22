@@ -17,12 +17,23 @@
             <div class="card-body">
               <h5 class="card-title">{{ $idee->libelle }}</h5>
               <p class="card-text">{{ $idee->description }}</p>
-              <a href="/approuve" class="btn btn-primary">Approuvée</a>
-              <a href="/refuse" class="btn btn-danger">Refusée</a>
+              <form action=" {{url('/approuve/'.$idee->id)}}" method="post">
+                @csrf
+                
+                <button type="submit" class="btn btn-primary">Approuvée</button>
+              </form>
+              <form action=" {{url('/refuse/'.$idee->id)}}" method="post">
+                @csrf
+               
+                <button type="submit" class="btn btn-danger">Refuse</button>
+              </form>
+              
+              
             </div>
           </div>
 
           <h1 class="text-center">Ecrivez votre commentaire</h1>
+          <div class="container">
       <form class="container" action="save_commentaire" method="post">
         @csrf
         <input type="hidden" name="idees_id" value="{{ $idee->id}}">
@@ -37,6 +48,7 @@
         
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
+      </div>
 
       <h1 class="text-center">Vos commentaires</h1>
       @foreach($idee->commentaires as $commentaire )

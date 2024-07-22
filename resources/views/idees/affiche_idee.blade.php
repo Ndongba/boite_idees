@@ -37,19 +37,22 @@
   </div>
 </nav>
 
-  <h1>Liste des idées </h1>
+  <h1 class="container">Liste des idées </h1>
     @foreach($idees as $idee)
+    <div class="container">
 <div class="card">
   <h5 class="card-header">{{ $idee->auteur_nom_complet}}</h5>
   <div class="card-body">
     <h5 class="card-title">{{ $idee->libelle}}</h5>
     <p class="card-text">{{ Str::limit ( $idee->description,100)}}</p>
-  @Auth
+  
   <a href="detail_idee/{{ $idee->id}}" class="btn btn-primary">Voir detail</a>
-  <a href="supprimer/{{ $idee->id}}" class="btn btn-danger">Supprimer</a>
-  <a href="modifier_idee/{{ $idee->id}}" class="btn btn-success">Modifier</a>
-    @endAuth
+  @Auth
+    <a href="supprimer/{{ $idee->id}}" class="btn btn-danger">Supprimer</a>
+    <a href="modifier_idee/{{ $idee->id}}" class="btn btn-success">Modifier</a>
+  @endAuth
 <hr>
+</div>
 </div>
 </div>
   @endforeach 

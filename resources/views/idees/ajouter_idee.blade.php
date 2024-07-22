@@ -16,6 +16,9 @@
             <input type="text" class="form-control" name="auteur_nom_complet">
         </div>
         <div class="mb-3">
+           <input type="hidden" class="form-control" name="categories_id" value="1">
+        </div>
+        <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Email</label>
             <input type="email" class="form-control" name="auteur_email">
         </div>

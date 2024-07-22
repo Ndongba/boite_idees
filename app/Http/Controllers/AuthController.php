@@ -27,8 +27,8 @@ class AuthController extends Controller
     $user=User::create($request->all());
 
     auth()->login($user);
-    return redirect('idees.affiche_idee');
-
+    return redirect('affiche_idee');
+    
    }
    
     public function login(){
